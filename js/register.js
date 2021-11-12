@@ -2,8 +2,8 @@ window.onload = async ()=>{
     let area = await fetch('http://localhost/php/LESSONS/php%20app/json/barangay.json').then((data)=>{return data.json()}).then((completedata)=> {
         return Object.keys(completedata);
     })
-    let form = document.forms
-    console.log(form)
+    
+
     let select_city =  document.getElementById("city");
     let option_cities;
     for(let i = 0; i < area.length; i++) {
@@ -74,6 +74,7 @@ window.onload = async ()=>{
     last_input.addEventListener("keyup", (event)=> {
         event.target.value = event.target.value.toUpperCase(); 
         })
+    
     let first_input = document.getElementById("fname");
     first_input.addEventListener("keyup", (event)=> {
         event.target.value = event.target.value.toUpperCase(); 
@@ -83,6 +84,14 @@ window.onload = async ()=>{
         event.target.value = event.target.value.toUpperCase(); 
         })
 
+    let reg = document.getElementById("register")
+    reg.addEventListener("click", (event)=>{
+        if((last_input.value == "") || (first_input.value == "")){
+            let form = document.forms
+            event.preventDefault();
+        }
+
+    })
     //click h1
     let first_choices_div = document.getElementById("first-choices");
     first_choices_div.addEventListener("click",changehElement)
@@ -110,7 +119,6 @@ window.onload = async ()=>{
                     target.parentElement.children[i].style.backgroundColor = "white"
                     target.parentElement.children[i].style.boxShadow = "0px 0px 5px rgba(110,110,110,.3)"
                     target.parentElement.children[i].style.color = "black"
-                    console.log(target.parentElement.children.length)
                 }
             } catch {
             }

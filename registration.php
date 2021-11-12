@@ -245,7 +245,7 @@
                     </div>
 
                 </div>
-                <input type="submit" value="Register" class = "register" style="color: white; border:none; background-color:green; font-size:1.75rem;border-radius:5px; font-weight:.50rem; cursor:pointer;" name="submit">
+                <input type="submit" value="Register" id="register"class = "register" style="color: white; border:none; background-color:green; font-size:1.75rem;border-radius:5px; font-weight:.50rem; cursor:pointer;" name="submit">
         </form>
         </div>
     </section>
@@ -276,9 +276,12 @@
 
         $birthdate = array($day, $month, $year);
         $birthdate = join("-", $birthdate);
+        $dateRegistered = date("Y-m-d");
 
-        $sql = "INSERT INTO `usersinfo`(`profile`, `LastName`, `MiddleName`, `FirstName`, `Suffix`, `Gender`, `Birthdate`, `MobileNo.`, `Address`, `City`, `Barangay`, `firstQuestionAnswer`, `secondQuestionAnswer`, `thirdQuestionAnswer`, `fourthQuestionAnswer`) VALUES ('$target_file','$lname','$mname','$fname','$suffix','$gender','$birthdate','$contact','$address','$city','$barangay','$firstanswer','$secondanswer','$thirdanswer','$fourthanswer')";
-        $con->query($sql) or die("Error");    
+        $time = gmstrftime("%X");
+
+        $sql = "INSERT INTO `usersinfo`(`profile`, `LastName`, `MiddleName`, `FirstName`, `Suffix`, `Gender`, `Birthdate`, `MobileNo`, `Address`, `City`, `Barangay`, `firstQuestionAnswer`, `secondQuestionAnswer`, `thirdQuestionAnswer`, `fourthQuestionAnswer`, `dateRegistered`, `time`) VALUES ('$target_file','$lname','$mname','$fname','$suffix','$gender','$birthdate','$contact','$address','$city','$barangay','$firstanswer','$secondanswer','$thirdanswer','$fourthanswer', '$dateRegistered', '$time')";
+        $con->query($sql) or die("Error"); 
     }
     
 ?>

@@ -9,7 +9,6 @@ function connection() {
     if($con->connect_error){
         echo $con->connect_error;
     } else {
-        echo "succes";
         return $con;
     }
 }

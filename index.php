@@ -23,7 +23,7 @@
         Kaya mga kababayan ko, hinihikayat ko po kayo na lumahok sa <strong>Pre-registration</strong> process na ating nilunsad ngayon upang mas mapabilis at mainam na proseso ng <strong>Free COVID-19 Vaccine</strong> para sa lahat sa sandaling dumating ito. Pumanatag kayo na tanging sertipikado lang ng Food and Drug Administration ang bibilin nating bakuna upang matiyak ito na epektibo at ligtas gamitin. May awa ang <strong>Diyos</strong> makakaraos din po tayo. <strong>Manila, God First!</strong>
         </p>
         <div class="buttons">
-            <a href="register.php"id = "red">Click to Register</a>
+            <a href="registration.php"id = "red">Click to Register</a>
         <div class="second-buttons">
             <button class = "grey">Manila SITREP</button>
             <button class = "grey">Pre-Registered</button>
