@@ -145,7 +145,7 @@
                 <div class="sixth">
                     <h1 class="red">Mobile No.(09XXXXXXXXX)</h1>
                     
-                    <input type="text" name="contact" id="contact">
+                    <input type="text" name="number" id="contact">
                 </div> 
                 <div class="seventh">
                     <h1 class="red">Home Address</h1>
@@ -261,7 +261,7 @@
         $month = $_POST['month'];
         $day = $_POST['day'];
         $year = $_POST['year'];
-        $contact = $_POST['contact'];
+        $contact = $_POST['number'];
         $address = $_POST['address'];
         $city = $_POST['city'];
         $barangay = $_POST['barangay'];

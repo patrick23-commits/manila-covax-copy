@@ -30,7 +30,7 @@
             <button class = "grey">Vaccinated</button>
             <button class = "grey">Full Vaccinated</button>
         </div>
-            <a href="users info.php" id = "blue">Search My Record (Login)</a>
+            <a href="search.php" id = "blue">Search My Record (Login)</a>
     </div>
     <div class = "bottom">
         <p><a href="https://www.tap-i-t.com/site/index.php" style="font-weight: bold; text-decoration: none; color: rgb(23, 23, 167);">IT Solutions</a> </p>
