@@ -1,17 +1,36 @@
 <?php
-include_once("connections/db_connection.php");
-$conn = connection();
-    if(isset($_POST['search_btn'])){
-    $fname = $_POST['search'];
-    $contact = $_POST['contact_search'];
 
-    $sql = "SELECT * FROM `usersinfo` WHERE FirstName LIKE '$fname' AND MobileNo = '$contact'";
-    $info = $conn->query($sql) or die($conn->error);
-    $row = $info->fetch_assoc();
-    }
-    $date = new DateTime();
-    $a = date("Y/m/d");
+include_once("connections/db_connection.php");
+session_start();
+$conn = connection();
+  
     
-?>
-<img src="<?php echo $row['profile'] ?>" alt="" srcset="" width="150" height="150">
-<h1><?php echo $row['FirstName']. $row['LastName'] ?></h1>
+ 
+        if($_SESSION){
+
+        $name = $_SESSION['name'];
+        $contact_ = $_SESSION['contact'];
+        
+        $sql = "SELECT * FROM `usersinfo` WHERE FirstName LIKE '$name' AND MobileNo = '$contact_'";
+        $info = $conn->query($sql) or die($conn->error);
+        $row = $info->fetch_assoc();
+        if($info->num_rows > 0){
+            print_r($row);
+         ?>
+         <img src="<?php echo $row['profile'] ?>" alt="" srcset="" width="150" height="150">
+        <h1><?php echo $row['FirstName']. " " .$row['LastName'] ?></h1>
+  
+        <?php   
+        } else {
+            
+        }
+    } else {
+        header("Location:search.php");
+    }
+        ?>
+      
+
+    
+    
+   
+

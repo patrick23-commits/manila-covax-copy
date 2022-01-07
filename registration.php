@@ -144,8 +144,7 @@
             
                 <div class="sixth">
                     <h1 class="red">Mobile No.(09XXXXXXXXX)</h1>
-                    
-                    <input type="text" name="number" id="contact">
+                    <input type="text" name="tawag" id="">
                 </div> 
                 <div class="seventh">
                     <h1 class="red">Home Address</h1>
@@ -261,7 +260,7 @@
         $month = $_POST['month'];
         $day = $_POST['day'];
         $year = $_POST['year'];
-        $contact = $_POST['number'];
+        $contact = $_POST['tawag'];
         $address = $_POST['address'];
         $city = $_POST['city'];
         $barangay = $_POST['barangay'];
@@ -280,8 +279,10 @@
 
         $time = gmstrftime("%X");
 
-        $sql = "INSERT INTO `usersinfo`(`profile`, `LastName`, `MiddleName`, `FirstName`, `Suffix`, `Gender`, `Birthdate`, `MobileNo`, `Address`, `City`, `Barangay`, `firstQuestionAnswer`, `secondQuestionAnswer`, `thirdQuestionAnswer`, `fourthQuestionAnswer`, `dateRegistered`, `time`) VALUES ('$target_file','$lname','$mname','$fname','$suffix','$gender','$birthdate','$contact','$address','$city','$barangay','$firstanswer','$secondanswer','$thirdanswer','$fourthanswer', '$dateRegistered', '$time')";
-        $con->query($sql) or die("Error"); 
+
+            $sql = "INSERT INTO `usersinfo`(`profile`, `LastName`, `MiddleName`, `FirstName`, `Suffix`, `Gender`, `Birthdate`, `MobileNo`, `Address`, `City`, `Barangay`, `firstQuestionAnswer`, `secondQuestionAnswer`, `thirdQuestionAnswer`, `fourthQuestionAnswer`, `dateRegistered`, `time`) VALUES ('$target_file','$lname','$mname','$fname','$suffix','$gender','$birthdate','$contact','$address','$city','$barangay','$firstanswer','$secondanswer','$thirdanswer','$fourthanswer', '$dateRegistered', '$time')";
+            $con->query($sql) or die("Error"); 
+        
     }
     
 ?>

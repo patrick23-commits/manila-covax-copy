@@ -1,5 +1,5 @@
 window.onload = async ()=>{
-    let area = await fetch('http://localhost/php/LESSONS/php%20app/json/barangay.json').then((data)=>{return data.json()}).then((completedata)=> {
+    let area = await fetch('https://localhost/php/LESSONS/php%20app/json/barangay.json').then((data)=>{return data.json()}).then((completedata)=> {
         return Object.keys(completedata);
     })
     
@@ -28,7 +28,7 @@ window.onload = async ()=>{
             }
         } 
         else {
-            let barangay = await fetch('http://localhost/php/LESSONS/php%20app/json/barangay.json').then((data)=>{return data.json()}).then((completedata)=> {
+            let barangay = await fetch('https://localhost/php/LESSONS/php%20app/json/barangay.json').then((data)=>{return data.json()}).then((completedata)=> {
                 return completedata[select_city.value];
             })
             let areas_select = document.getElementById("barangay");
@@ -157,6 +157,7 @@ window.onload = async ()=>{
 
         
     })
+    
 
     //Slides
     let div = document.getElementById("wrap");
