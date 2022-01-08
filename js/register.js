@@ -144,7 +144,7 @@ window.onload = async ()=>{
 
     //Limiting contact number
     let contact = document.getElementById("contact");
-    contact.addEventListener("keypress", (event)=> {
+    contact.addEventListener("keyup", (event)=> {
         let target = event.target;
 
         if(target.value.match(/a/gi) || target.value.match(/b/gi) || target.value.match(/c/gi) || target.value.match(/d/gi) || target.value.match(/e/gi) || target.value.match(/f/gi) || target.value.match(/g/gi) || target.value.match(/h/gi) || target.value.match(/i/gi) || target.value.match(/j/gi) || target.value.match(/k/gi) || target.value.match(/l/gi) || target.value.match(/m/gi) || target.value.match(/n/gi) || target.value.match(/e/gi) || target.value.match(/f/gi) || target.value.match(/g/gi) || target.value.match(/h/gi) || target.value.match(/o/gi) || target.value.match(/p/gi) || target.value.match(/q/gi) || target.value.match(/r/gi) || target.value.match(/s/gi) || target.value.match(/t/gi) || target.value.match(/u/gi) || target.value.match(/v/gi) || target.value.match(/w/gi) || target.value.match(/x/gi) || target.value.match(/y/gi) || target.value.match(/z/gi)){
@@ -152,10 +152,13 @@ window.onload = async ()=>{
             alert("Invalid input");
         }
         if(target.value.length > 11) {
-                target.value = target.value.slice(11,12)
-        }
+                target.value = target.value.substr(0,11)
+                console.log(target.value)
+                target.value[10] = " "
 
-        
+                
+                
+        }
     })
     
 
@@ -192,6 +195,8 @@ window.onload = async ()=>{
                 isClick = true;
             }
         })
+
+        
 }
 
 

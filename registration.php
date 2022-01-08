@@ -144,7 +144,7 @@
             
                 <div class="sixth">
                     <h1 class="red">Mobile No.(09XXXXXXXXX)</h1>
-                    <input type="text" name="tawag" id="">
+                    <input type="text" name="tawag" id="contact">
                 </div> 
                 <div class="seventh">
                     <h1 class="red">Home Address</h1>
@@ -252,9 +252,14 @@
 <?php
     $con = connection();
     if(isset($_POST['submit'])){
-        $fname = $_POST['first_name'];
-        $lname = $_POST['last_name'];
-        $mname = $_POST['middle_name'];
+       
+        
+            $stmt = $con->prepare("INSERT INTO `usersinfo`(`profile`, `LastName`, `MiddleName`, `FirstName`, `Suffix`, `Gender`, `Birthdate`, `MobileNo`, `Address`, `City`, `Barangay`, `firstQuestionAnswer`, `secondQuestionAnswer`, `thirdQuestionAnswer`, `fourthQuestionAnswer`, `dateRegistered`, `time`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("sssssssssssssssss",$target_file,$lname,$mname,$fname,$suffix,$gender,$birthdate,$contact,$address,$city,$barangay,$firstanswer,$secondanswer,$thirdanswer,$fourthanswer, $dateRegistered, $time);
+            
+            $fname = $_POST['first_name'];
+            $lname = $_POST['last_name'];
+            $mname = $_POST['middle_name'];
         $suffix = $_POST['suffix'];
         $gender = $_POST['gender'];
         $month = $_POST['month'];
@@ -278,10 +283,9 @@
         $dateRegistered = date("Y-m-d");
 
         $time = gmstrftime("%X");
-
-
-            $sql = "INSERT INTO `usersinfo`(`profile`, `LastName`, `MiddleName`, `FirstName`, `Suffix`, `Gender`, `Birthdate`, `MobileNo`, `Address`, `City`, `Barangay`, `firstQuestionAnswer`, `secondQuestionAnswer`, `thirdQuestionAnswer`, `fourthQuestionAnswer`, `dateRegistered`, `time`) VALUES ('$target_file','$lname','$mname','$fname','$suffix','$gender','$birthdate','$contact','$address','$city','$barangay','$firstanswer','$secondanswer','$thirdanswer','$fourthanswer', '$dateRegistered', '$time')";
-            $con->query($sql) or die("Error"); 
+        
+            $stmt->execute();
+            $stmt->close();
         
     }
     
