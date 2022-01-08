@@ -1,5 +1,5 @@
 <?php
-
+include_once("connections/header.php");
 include_once("connections/db_connection.php");
 session_start();
 $conn = connection();
@@ -37,6 +37,7 @@ $conn = connection();
     <a href="https:../php app/search.php">Log in</a>
     <?php
     }
+    include_once("connections/footer.php");
         ?>
         
       

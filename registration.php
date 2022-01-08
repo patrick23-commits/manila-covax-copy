@@ -1,4 +1,5 @@
-<?php include_once("connections/header.php");
+<?php 
+    include_once("connections/header.php");
     include_once("connections/db_connection.php");
     ?>
 <link rel="stylesheet" href="css/register.css">
